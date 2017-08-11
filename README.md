@@ -18,7 +18,7 @@ Use these instructions to get a copy of this project up and running on your loca
     * ```.module("CHANGE ME!!!!");```
     * Change to ```.module("Your Module Name");```
 * Add script link in angular app to this file
-    * <script scr="Path to authentication.service.js file goes here"></script>
+    * <script scr="Path to auth.service.js file goes here"></script>
 * Use methods to buil authentication
 
 ## Tests
