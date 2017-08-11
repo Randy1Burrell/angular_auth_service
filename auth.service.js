@@ -84,7 +84,8 @@
         return {
             saveToken : saveToken,
             getToken : getToken,
-            generic_login_or_register_user : generic_login_or_register_user
+            generic_login_or_register_user : generic_login_or_register_user,
+            logout : logout
         };
     }
 }) ();
