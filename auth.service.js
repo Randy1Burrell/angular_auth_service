@@ -74,7 +74,7 @@
             /**
              * @name : logout
              * @desc : removes token on an item from browser's local storage
-             * @params : string tokenName - name of item to be removed from storage
+             * @param : string tokenName - name of item to be removed from storage
              * @return : no data
              */
              $window.localStorage.removeItem(tokenName);
@@ -84,7 +84,7 @@
             /**
              * @name : isLoggedIn
              * @desc : ckecks to see if user with token is logged in
-             * @params : string tokenName - name of token for user data
+             * @param : string tokenName - name of token for user data
              * @return : bool - true user logged in or false user annonymous
              */
              var token = getToken(tokenName);
@@ -117,7 +117,7 @@
             /**
              * @name : currentUser
              * @desc : gets current user
-             * @params : string tokenName - name of token for user data
+             * @param : string tokenName - name of token for user data
              * @return : Object JSON - logged in user's data
              */
             if (isLoggedIn(tokenName)) {
