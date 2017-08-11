@@ -70,7 +70,7 @@
              );
         };
 
-        var logout = function() {
+        var logout = function(tokenName) {
             /*
              * @name : logout
              * @desc : removes token on an item from browser's local storage
