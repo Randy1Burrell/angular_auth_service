@@ -23,7 +23,11 @@
             $window.localStorage['CHANGE ME!!!!'] = token;
         };
 
-        //
+        var getToken = function() {
+            // localStorage name should be the same as saveToken localStorage name
+            return $window.localStorage['CHANGE ME!!!!'];
+        };
+        // Expose auth functions for public use here
         return {
             saveToken : saveToken
         };
