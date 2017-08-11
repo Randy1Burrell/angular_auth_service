@@ -34,3 +34,7 @@ Use these instructions to get a copy of this project up and running on your loca
 ## Authors
 
 * [**Randy Burrell**](https://www.randyburrell.info)
+
+## License
+
+This project is license under the GPL Version 2.0 - please see the [LICENSE.md](https://github.com/Randy1Burrell/angular_auth_service/blob/master/LICENSE) file for more details.
