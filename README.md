@@ -8,12 +8,12 @@ Use these instructions to get a copy of this project up and running on your loca
 
 ### Prerequisites
 
-    * Angular.js installed in the development machine
-    * Angular module to use this file with eg. an authentication module
+* Angular.js installed in the development machine
+* Angular module to use this file with eg. an authentication module
 
 ### Installing
 
-    * Item 1 Clone this project to your angular module's services folder
-    * Change the module name marked "CHANGE ME!!" at the top of the authentication.service.js file
-        * ```.module("CHANGE ME!!!!");```
-        * Change to ```.module("Your Module Name")```
+* Clone this project to your angular module's services folder
+* Change the module name marked "CHANGE ME!!" at the top of the authentication.service.js file
+    * ```.module("CHANGE ME!!!!");```
+    * Change to ```.module("Your Module Name")```
