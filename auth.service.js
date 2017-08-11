@@ -6,9 +6,8 @@
  * through JWT.
  *
  * Usage: Copy this file to your angular client services folder
- * and change the module name below tothe module you would like
- * to use it as. Also change the token name in saveToken, getToken
- * and logout function to your prefered JSON Web Token
+ * and change the module name below to the module you would like
+ * to use it as.
  */
 (function (){
     angular
@@ -19,15 +18,47 @@
     authentication.inject = ['$window'];
     // Use authentication service as closure for auth methods
     function authentication($window) {
-        // Used to save JSON web tokens to browser's localStorage
-        var saveToken = function(token) {
-            $window.localStorage['CHANGE ME!!!!'] = token;
+
+        var saveToken = function(token, name) {
+            /**
+             * @name : saveToken
+             * @desc : Used to save JSON web token to browse's local storage
+             * @param : Object - JSON web token
+             * @return : no value
+             */
+            $window.localStorage[name] = token;
         };
-        // Used to get JSON web tokens from browser's localStorage
-        var getToken = function() {
-            // localStorage name should be the same as saveToken localStorage name
-            return $window.localStorage['CHANGE ME!!!!'];
+
+        var getToken = function(name) {
+            /**
+             * @name : getToken
+             * @desc : Used to get tokens stored in browser's local storage
+             * @param : string name - name of token to return
+             * @return : JSON web token from local storage
+             */
+            return $window.localStorage[name];
         };
+
+        var login = function(data, api, success, error) {
+            /**
+             * @name : login
+             * @desc : Used to post data to your login api
+             * @param : Object - user's login data
+             *          api - url of the api to post to
+             *          success - callback function to invoke if successfull
+             *          error - callback function to invoke if there's an error
+             * @return : Api response - JSON web token or Error
+             */
+             return $http({
+                method : 'POST',
+                url : api,
+                data : data
+             }.then(
+                success,
+                error
+             );
+        };
+
         // Expose auth functions for public use here
         return {
             saveToken : saveToken,
