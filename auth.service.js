@@ -73,7 +73,8 @@
         // Expose auth functions for public use here
         return {
             saveToken : saveToken,
-            getToken : getToken
+            getToken : getToken,
+            generic_login_or_register_user : generic_login_or_register_user
         };
     }
 }) ();
