@@ -70,6 +70,16 @@
              );
         };
 
+        var logout = function() {
+            /*
+             * @name : logout
+             * @desc : removes token on an item from browser's local storage
+             * @params : string tokenName - name of item to be removed from storage
+             * @return : no data
+             */
+             $window.localStorage.removeItem(tokenName);
+        };
+
         // Expose auth functions for public use here
         return {
             saveToken : saveToken,
