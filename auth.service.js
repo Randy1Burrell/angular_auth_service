@@ -15,12 +15,15 @@
         .module('CHANGE ME!!!!');
         .service('authentication');
 
+    // Inject browser window property into authentication service
     authentication.inject = ['$window'];
+    // Use authentication service as closure for auth methods
     function authentication($window) {
         var saveToken = function(token) {
             $window.localStorage['CHANGE ME!!!!'] = token;
         };
 
+        //
         return {
             saveToken : saveToken
         };
