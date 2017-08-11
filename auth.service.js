@@ -19,10 +19,11 @@
     authentication.inject = ['$window'];
     // Use authentication service as closure for auth methods
     function authentication($window) {
+        // Used to save JSON web tokens to browser's localStorage
         var saveToken = function(token) {
             $window.localStorage['CHANGE ME!!!!'] = token;
         };
-
+        // Used to get JSON web tokens from browser's localStorage
         var getToken = function() {
             // localStorage name should be the same as saveToken localStorage name
             return $window.localStorage['CHANGE ME!!!!'];
