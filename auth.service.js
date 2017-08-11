@@ -39,14 +39,14 @@
             return $window.localStorage[name];
         };
 
-        var login_or_registration_success = function(data) {
+        var login_or_registration_success = function(data, name) {
             /**
              * @name : login_or_registration_success
              * @desc : saves token as param tokenName
              * @param : Object data - data returned from http call to api
              *          string name - name of the token to be saved
              */
-             saveToken(token, name)
+             saveToken(data.token, name)
         };
 
         var generic_login_or_register_user = function(user, apiUrl, tokenName, error) {
@@ -65,7 +65,7 @@
                 url : apiUrl,
                 user : user
              }.then(
-                success(data, tokenName),
+                login_or_registration_success(data, tokenName),
                 error(err)
              );
         };
