@@ -28,4 +28,4 @@ Use these instructions to get a copy of this project up and running on your loca
 
 ## Built With
 
-* [Angular] (https://angularjs.org/)
+* [Angular](https://angularjs.org/)
