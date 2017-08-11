@@ -16,4 +16,4 @@ Use these instructions to get a copy of this project up and running on your loca
 * Clone this project to your angular module's services folder
 * Change the module name marked "CHANGE ME!!" at the top of the authentication.service.js file
     * ```.module("CHANGE ME!!!!");```
-    * Change to ```.module("Your Module Name")```
+    * Change to ```.module("Your Module Name");```
