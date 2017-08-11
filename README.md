@@ -29,3 +29,8 @@ Use these instructions to get a copy of this project up and running on your loca
 ## Built With
 
 * [Angular](https://angularjs.org/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+
+## Authors
+
+* [**Randy Burrell**](https://www.randyburrell.info)
