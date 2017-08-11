@@ -71,7 +71,7 @@
         };
 
         var logout = function(tokenName) {
-            /*
+            /**
              * @name : logout
              * @desc : removes token on an item from browser's local storage
              * @params : string tokenName - name of item to be removed from storage
@@ -80,12 +80,45 @@
              $window.localStorage.removeItem(tokenName);
         };
 
+        var isLoggedIn = function(tokenName) {
+            /**
+             * @name : isLoggedIn
+             * @desc : ckecks to see if user with token is logged in
+             * @params : string tokenName - name of item to be removed from storage
+             * @return : bool - true user logged in or false user annonymous
+             */
+             var token = getToken(tokenName);
+
+             if (token) {
+                var payload = JSON.parse($window.atob(token.split('.')[1]));
+                if (payload) {
+                    if (payload.exp > Date.now() / 1000) {
+                        // return true if valid token is found
+                        return true;
+                    } else {
+                        /**
+                         * Delete the token if it has been expired
+                         * then return false
+                         */
+                        logout(tokenName);
+                        return false;
+                    }
+                } else {
+                    // return false is no payload is found
+                    return false;
+                }
+             } else {
+                // return false if no token is found
+                return false;
+             }
+        };
         // Expose auth functions for public use here
         return {
             saveToken : saveToken,
             getToken : getToken,
             generic_login_or_register_user : generic_login_or_register_user,
-            logout : logout
+            logout : logout,
+            isLoggedIn : isLoggedIn
         };
     }
 }) ();
