@@ -84,7 +84,7 @@
             /**
              * @name : isLoggedIn
              * @desc : ckecks to see if user with token is logged in
-             * @params : string tokenName - name of item to be removed from storage
+             * @params : string tokenName - name of token for user data
              * @return : bool - true user logged in or false user annonymous
              */
              var token = getToken(tokenName);
@@ -112,13 +112,31 @@
                 return false;
              }
         };
+
+        var currentUser = function(tokenName) {
+            /**
+             * @name : currentUser
+             * @desc : gets current user
+             * @params : string tokenName - name of token for user data
+             * @return : Object JSON - logged in user's data
+             */
+            if (isLoggedIn(tokenName)) {
+                var token = getToken(tokenName);
+                var payload = JSON.parse($window.atob(token.split('.')[1]));
+                return {
+                    name : payload.name,
+                    email : payload.email
+                }
+            }
+        };
         // Expose auth functions for public use here
         return {
             saveToken : saveToken,
             getToken : getToken,
             generic_login_or_register_user : generic_login_or_register_user,
             logout : logout,
-            isLoggedIn : isLoggedIn
+            isLoggedIn : isLoggedIn,
+            currentUser : currentUser
         };
     }
 }) ();
