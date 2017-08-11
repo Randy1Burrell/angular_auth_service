@@ -39,23 +39,34 @@
             return $window.localStorage[name];
         };
 
-        var login = function(data, api, success, error) {
+        var login_or_registration_success = function(data) {
             /**
-             * @name : login
-             * @desc : Used to post data to your login api
+             * @name : login_or_registration_success
+             * @desc : saves token as param tokenName
+             * @param : Object data - data returned from http call to api
+             *          string name - name of the token to be saved
+             */
+             saveToken(token, name)
+        };
+
+        var generic_login_or_register_user = function(user, apiUrl, tokenName, error) {
+            /**
+             * @name : generic_login_or_register_user
+             * @desc : Used to post data to your api's login/registration url and save
+             * any tokens returned
              * @param : Object - user's login data
-             *          api - url of the api to post to
-             *          success - callback function to invoke if successfull
-             *          error - callback function to invoke if there's an error
+             *          string apiUrl - url of the api to post to
+             *          string tokenName - name to save token as
+             *          object error - callback function to invoke if there's an error @params should be error object
              * @return : Api response - JSON web token or Error
              */
              return $http({
                 method : 'POST',
-                url : api,
-                data : data
+                url : apiUrl,
+                user : user
              }.then(
-                success,
-                error
+                success(data, tokenName),
+                error(err)
              );
         };
 
