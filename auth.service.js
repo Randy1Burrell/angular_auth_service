@@ -29,7 +29,8 @@
         };
         // Expose auth functions for public use here
         return {
-            saveToken : saveToken
+            saveToken : saveToken,
+            getToken : getToken
         };
     }
 }) ();
