@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('install') {
       steps {
-        sh 'npm -g install angular'
+        sh 'npm install angular'
       }
     }
   }
